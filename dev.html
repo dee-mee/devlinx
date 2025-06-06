@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLinx - Modern & Sleek Portfolio</title>
+    <!-- SEO Meta Tags: Ensure these are descriptive and include keywords relevant to DevLinx. -->
+    <meta name="description" content="DevLinx - Your trusted partner in cutting-edge software solutions, web development, UI/UX design, and digital transformation.">
+    <meta name="keywords" content="DevLinx, software development, web development, mobile app, UI/UX design, cloud solutions, digital marketing, data analytics, cybersecurity, portfolio, company, technology">
+    <meta name="author" content="DevLinx Team">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts - Inter for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-smooth-scroll="true" tabindex="0">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="logo.png" alt="DevLinx Logo" height="50" class="d-inline-block align-text-top me-2">
+                <span>DevLinx</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center"> <!-- Added align-items-center for toggle button alignment -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sbus">SBUs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partnerships">Partnerships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Theme Toggle Button -->
+                        <span id="theme-toggle" class="nav-link" title="Toggle dark/light theme">
+                            <i class="fas fa-moon"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="home" class="hero-section d-flex align-items-center position-relative">
+        <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline id="heroVideo">
+                <source src="media/videos/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="container position-relative z-index-1">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1>Innovate. Develop. Transform.</h1>
+                    <p class="lead">Your trusted partner in cutting-edge software solutions and digital transformation.</p>
+                    <a href="#portfolio" class="btn btn-primary btn-lg">View Our Work <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">About DevLinx</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://placehold.co/600x400/007bff/ffffff?text=Our+Story" class="img-fluid rounded-4 shadow-lg" alt="About DevLinx">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Our Story, Mission & Values</h3>
+                    <p class="lead">DevLinx was founded on the principle of bridging the gap between innovative ideas and robust digital solutions.</p>
+                    <p>Since our inception in 2015, we've grown into a dynamic team of passionate developers, designers, and strategists dedicated to delivering exceptional results. Our mission is to empower businesses with transformative technology, fostering growth and efficiency.</p>
+                    <p>We value collaboration, integrity, and continuous learning. We believe in building long-term partnerships with our clients, ensuring transparency and commitment at every step of the journey.</p>
+                    <a href="#contact" class="btn btn-primary mt-3">Get a Free Consultation <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <h3 class="text-center mb-4 mt-5">Meet Our Team</h3>
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card team-member-card">
+                        <div class="card-body">
+                            <img src="https://i.pravatar.cc/300?img=1" class="card-img-top" alt="Jane Doe">
+                            <h5 class="card-title">Jane Doe</h5>
+                            <p class="card-text text-muted">CEO & Founder</p>
+                            <p class="card-text">Visionary leader driving DevLinx forward with a passion for innovation.</p>
+                            <button type="button" class="btn btn-outline-primary btn-sm mt-2 view-profile-btn"
+                                data-bs-toggle="modal" data-bs-target="#teamMemberModal"
+                                data-name="Jane Doe"
+                                data-role="CEO & Founder"
+                                data-bio="Jane is the visionary leader behind DevLinx, with over 15 years of experience in software development and entrepreneurship. Her passion for innovation and commitment to client success have shaped the company's core values."
+                                data-linkedin="https://linkedin.com/in/janedoe"
+                                data-twitter="https://twitter.com/janedoe"
+                                data-img="https://i.pravatar.cc/600?img=1">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card team-member-card">
+                        <div class="card-body">
+                            <img src="https://i.pravatar.cc/300?img=32" class="card-img-top" alt="John Smith">
+                            <h5 class="card-title">John Smith</h5>
+                            <p class="card-text text-muted">Lead Developer</p>
+                            <p class="card-text">Expert in full-stack development, crafting robust and scalable solutions.</p>
+                            <button type="button" class="btn btn-outline-primary btn-sm mt-2 view-profile-btn"
+                                data-bs-toggle="modal" data-bs-target="#teamMemberModal"
+                                data-name="John Smith"
+                                data-role="Lead Developer"
+                                data-bio="John is a seasoned full-stack developer with a knack for building scalable and efficient web applications. He leads our development team with a focus on clean code and cutting-edge technologies."
+                                data-linkedin="https://linkedin.com/in/johnsmith"
+                                data-github="https://github.com/johnsmith"
+                                data-img="https://i.pravatar.cc/600?img=32">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card team-member-card">
+                        <div class="card-body">
+                            <img src="https://i.pravatar.cc/300?img=45" class="card-img-top" alt="Emily Brown">
+                            <h5 class="card-title">Emily Brown</h5>
+                            <p class="card-text text-muted">UX/UI Designer</p>
+                            <p class="card-text">Passionate about creating intuitive and visually stunning user experiences.</p>
+                            <button type="button" class="btn btn-outline-primary btn-sm mt-2 view-profile-btn"
+                                data-bs-toggle="modal" data-bs-target="#teamMemberModal"
+                                data-name="Emily Brown"
+                                data-role="UX/UI Designer"
+                                data-bio="Emily is a creative force in UX/UI design, dedicated to crafting user-centric interfaces that are both beautiful and functional. She believes good design is invisible."
+                                data-linkedin="https://linkedin.com/in/emilybrown"
+                                data-behance="https://behance.net/emilybrown"
+                                data-img="https://i.pravatar.cc/600?img=45">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card team-member-card">
+                        <div class="card-body">
+                            <img src="https://i.pravatar.cc/300?img=22" class="card-img-top" alt="Michael Lee">
+                            <h5 class="card-title">Michael Lee</h5>
+                            <p class="card-text text-muted">Project Manager</p>
+                            <p class="card-text">Ensuring projects are delivered on time, within budget, and to perfection.</p>
+                            <button type="button" class="btn btn-outline-primary btn-sm mt-2 view-profile-btn"
+                                data-bs-toggle="modal" data-bs-target="#teamMemberModal"
+                                data-name="Michael Lee"
+                                data-role="Project Manager"
+                                data-bio="Michael is our highly organized project manager, ensuring seamless communication and efficient delivery of all projects. His expertise lies in agile methodologies and client satisfaction."
+                                data-linkedin="https://linkedin.com/in/michaellee"
+                                data-trello="https://trello.com/michaellee"
+                                data-img="https://i.pravatar.cc/600?img=22">View Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding section-bg-light">
+        <div class="container">
+            <h2 class="section-heading">Our Recent Work</h2>
+            <div class="row">
+                <!-- Project 1: Detailed Case Study -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=E-commerce+Platform" class="card-img-top" alt="E-commerce Platform">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Platform</h5>
+                            <p class="card-text">Developed a robust, scalable e-commerce solution with seamless user experience.</p>
+                            <button type="button" class="btn btn-outline-primary btn-sm view-case-study-btn"
+                                data-bs-toggle="modal" data-bs-target="#caseStudyModal"
+                                data-title="Revolutionizing Online Retail with OmniStore"
+                                data-image="https://placehold.co/600x400/007bff/ffffff?text=Case+Study+OmniStore"
+                                data-problem="OmniStore, a growing retail chain, struggled with an outdated e-commerce platform that couldn't handle their increasing traffic and lacked essential modern features like personalized recommendations and integrated loyalty programs. This led to high cart abandonment rates and stagnant online sales."
+                                data-solution="DevLinx designed and developed a custom, high-performance e-commerce platform using React, Node.js, and MongoDB. Key features included AI-powered product recommendations, a seamless one-page checkout, a robust loyalty program, and scalable microservices architecture. We also integrated advanced analytics to track user behavior."
+                                data-technologies="React, Node.js, MongoDB, AWS, Stripe API, Kafka, Google Analytics"
+                                data-results="Within 6 months of launch, OmniStore saw a <strong>35% increase in online sales</strong>, a <strong>20% reduction in cart abandonment</strong>, and a <strong>15% increase in customer retention</strong> due to the loyalty program. The new platform significantly improved operational efficiency and customer satisfaction.">View Case Study</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2: Interactive Demo -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/28a745/ffffff?text=Mobile+App+Design" class="card-img-top" alt="Mobile App Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness Tracking Mobile App</h5>
+                            <p class="card-text">Created an intuitive and engaging mobile application for a fitness brand.</p>
+                            <a href="https://www.youtube.com/embed/dQw4w9WgXcQ" target="_blank" class="btn btn-outline-primary btn-sm">View Demo <i class="fas fa-external-link-alt ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3: SaaS Dashboard -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/ffc107/ffffff?text=SaaS+Dashboard" class="card-img-top" alt="SaaS Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">SaaS Analytics Dashboard</h5>
+                            <p class="card-text">Designed and implemented a data-rich, user-friendly SaaS analytics dashboard.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4: Corporate Website -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/dc3545/ffffff?text=Corporate+Website" class="card-img-top" alt="Corporate Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Corporate Website Redesign</h5>
+                            <p class="card-text">Built a modern, responsive corporate website showcasing company services.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5: AI Integration -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/6f42c1/ffffff?text=AI+Integration" class="card-img-top" alt="AI Integration">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Chatbot Integration</h5>
+                            <p class="card-text">Integrated an AI-powered chatbot to enhance customer service for a client.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6: Custom CRM -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/17a2b8/ffffff?text=Custom+CRM" class="card-img-top" alt="Custom CRM">
+                        <div class="card-body">
+                            <h5 class="card-title">Custom CRM System</h5>
+                            <p class="card-text">Developed a bespoke CRM to streamline sales and customer management.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Business Units (SBUs) Section -->
+    <section id="sbus" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Our Strategic Business Units</h2>
+            <div class="row text-center">
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-code sbu-icon"></i>
+                        <h5 class="card-title">Software Development</h5>
+                        <p class="card-text">From web to mobile, we build custom software solutions tailored to your needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-palette sbu-icon"></i>
+                        <h5 class="card-title">UI/UX Design</h5>
+                        <p class="card-text">Crafting intuitive, engaging, and aesthetically pleasing user interfaces.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-cloud sbu-icon"></i>
+                        <h5 class="card-title">Cloud Solutions</h5>
+                        <p class="card-text">Leveraging cloud technologies for scalable, secure, and efficient infrastructures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-bullhorn sbu-icon"></i>
+                        <h5 class="card-title">Digital Marketing</h5>
+                        <p class="card-text">Driving online presence and growth through strategic digital marketing campaigns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-chart-line sbu-icon"></i>
+                        <h5 class="card-title">Data Analytics</h5>
+                        <p class="card-text">Transforming raw data into actionable insights for informed business decisions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card p-4 sbu-card">
+                        <i class="fas fa-shield-alt sbu-icon"></i>
+                        <h5 class="card-title">Cybersecurity Consulting</h5>
+                        <p class="card-text">Protecting your digital assets with comprehensive security strategies and audits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding section-bg-light">
+        <div class="container">
+            <h2 class="section-heading">What Our Clients Say</h2>
+            <div class="testimonial-slider-container">
+                <div class="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=7" class="testimonial-avatar" alt="Sarah Chen">
+                        <p class="testimonial-quote">"DevLinx delivered an exceptional e-commerce platform that exceeded our expectations. Their team was professional, highly skilled, and a pleasure to work with."</p>
+                        <p class="testimonial-author">- Sarah Chen</p>
+                        <p class="testimonial-company">CEO, Retail Innovations Inc.</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=32" class="testimonial-avatar" alt="David Rodriguez">
+                        <p class="testimonial-quote">"The mobile app designed by DevLinx revolutionized our user engagement. Their attention to UX/UI details is truly remarkable."</p>
+                        <p class="testimonial-author">- David Rodriguez</p>
+                        <p class="testimonial-company">Founder, FitLife Global</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=45" class="testimonial-avatar" alt="Emily White">
+                        <p class="testimonial-quote">"DevLinx provided invaluable cloud consulting, helping us optimize our infrastructure and significantly reduce costs. Highly recommended!"</p>
+                        <p class="testimonial-author">- Emily White</p>
+                        <p class="testimonial-company">CTO, Tech Solutions Ltd.</p>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=22" class="testimonial-avatar" alt="Alex Green">
+                        <p class="testimonial-quote">"Their digital marketing team boosted our online presence dramatically. We saw a tangible increase in leads and conversions."</p>
+                        <p class="testimonial-author">- Alex Green</p>
+                        <p class="testimonial-company">Marketing Director, GrowFast Co.</p>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=8" class="testimonial-avatar" alt="Maria Garcia">
+                        <p class="testimonial-quote">"The custom CRM developed by DevLinx is a game-changer for our sales process. It's intuitive and has streamlined our operations."</p>
+                        <p class="testimonial-author">- Maria Garcia</p>
+                        <p class="testimonial-company">Sales Manager, GlobalConnect</p>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=12" class="testimonial-avatar" alt="Robert Johnson">
+                        <p class="testimonial-quote">"DevLinx's cybersecurity audit was thorough and insightful. They helped us identify vulnerabilities and implement robust protection strategies."</p>
+                        <p class="testimonial-author">- Robert Johnson</p>
+                        <p class="testimonial-company">IT Head, SecureCorp</p>
+                    </div>
+                    <!-- Cloned testimonials for infinite scroll -->
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=7" class="testimonial-avatar" alt="Sarah Chen">
+                        <p class="testimonial-quote">"DevLinx delivered an exceptional e-commerce platform that exceeded our expectations. Their team was professional, highly skilled, and a pleasure to work with."</p>
+                        <p class="testimonial-author">- Sarah Chen</p>
+                        <p class="testimonial-company">CEO, Retail Innovations Inc.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=32" class="testimonial-avatar" alt="David Rodriguez">
+                        <p class="testimonial-quote">"The mobile app designed by DevLinx revolutionized our user engagement. Their attention to UX/UI details is truly remarkable."</p>
+                        <p class="testimonial-author">- David Rodriguez</p>
+                        <p class="testimonial-company">Founder, FitLife Global</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=45" class="testimonial-avatar" alt="Emily White">
+                        <p class="testimonial-quote">"DevLinx provided invaluable cloud consulting, helping us optimize our infrastructure and significantly reduce costs. Highly recommended!"</p>
+                        <p class="testimonial-author">- Emily White</p>
+                        <p class="testimonial-company">CTO, Tech Solutions Ltd.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=22" class="testimonial-avatar" alt="Alex Green">
+                        <p class="testimonial-quote">"Their digital marketing team boosted our online presence dramatically. We saw a tangible increase in leads and conversions."</p>
+                        <p class="testimonial-author">- Alex Green</p>
+                        <p class="testimonial-company">Marketing Director, GrowFast Co.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=8" class="testimonial-avatar" alt="Maria Garcia">
+                        <p class="testimonial-quote">"The custom CRM developed by DevLinx is a game-changer for our sales process. It's intuitive and has streamlined our operations."</p>
+                        <p class="testimonial-author">- Maria Garcia</p>
+                        <p class="testimonial-company">Sales Manager, GlobalConnect</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="https://i.pravatar.cc/150?img=12" class="testimonial-avatar" alt="Robert Johnson">
+                        <p class="testimonial-quote">"DevLinx's cybersecurity audit was thorough and insightful. They helped us identify vulnerabilities and implement robust protection strategies."</p>
+                        <p class="testimonial-author">- Robert Johnson</p>
+                        <p class="testimonial-company">IT Head, SecureCorp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section (Insights Section) -->
+    <section id="blog" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Latest Insights from Our Blog</h2>
+            <p class="text-center mb-5">Stay updated with the latest in technology, software development, and industry trends from the DevLinx team.</p>
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Blog+Post+1" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">The Future of AI in Software Development</h5>
+                            <p class="card-text text-muted small">June 1, 2025</p>
+                            <p class="card-text">Explore how artificial intelligence is shaping the landscape of modern software development and its implications.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Blog+Post+2" class="card-img-top" alt="Blog Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title">5 Tips for Building a Secure Web Application</h5>
+                            <p class="card-text text-muted small">May 20, 2025</p>
+                            <p class="card-text">Best practices and essential tips for developers to ensure the highest level of security in web applications.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Blog+Post+3" class="card-img-top" alt="Blog Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title">DevLinx Partners with InnovateCorp for New Project</h5>
+                            <p class="card-text text-muted small">May 10, 2025</p>
+                            <p class="card-text">Exciting news! DevLinx announces a strategic partnership with InnovateCorp to deliver a groundbreaking solution.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary btn-lg">View All Insights <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships & Certifications Section -->
+    <section id="partnerships" class="section-padding section-bg-light">
+        <div class="container">
+            <h2 class="section-heading">Our Valued Partnerships & Certifications</h2>
+            <p class="text-center mb-5">We collaborate with industry leaders and hold key certifications to ensure the highest quality of service.</p>
+            <div class="partnerships-slider-container">
+                <div class="partnerships-slider">
+                    <!-- Original set of logos -->
+                    <img src="https://placehold.co/150x80/28a745/ffffff?text=Partner+A" alt="Partner A Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/007bff/ffffff?text=Cert+B" alt="Certification B Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/ffc107/ffffff?text=Partner+C" alt="Partner C Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/6f42c1/ffffff?text=Cert+D" alt="Certification D Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/17a2b8/ffffff?text=Partner+E" alt="Partner E Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/dc3545/ffffff?text=Cert+F" alt="Certification F Logo" class="img-fluid partner-logo">
+                    <!-- Duplicated set of logos for seamless loop -->
+                    <img src="https://placehold.co/150x80/28a745/ffffff?text=Partner+A" alt="Partner A Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/007bff/ffffff?text=Cert+B" alt="Certification B Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/ffc107/ffffff?text=Partner+C" alt="Partner C Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/6f42c1/ffffff?text=Cert+D" alt="Certification D Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/17a2b8/ffffff?text=Partner+E" alt="Partner E Logo" class="img-fluid partner-logo">
+                    <img src="https://placehold.co/150x80/dc3545/ffffff?text=Cert+F" alt="Certification F Logo" class="img-fluid partner-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section id="newsletter-signup" class="newsletter-signup container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3>Stay Updated with DevLinx Insights!</h3>
+                <p>Subscribe to our newsletter for the latest tech trends, industry news, and exclusive offers delivered straight to your inbox.</p>
+                <form id="newsletterForm" class="d-flex flex-column align-items-center">
+                    <input type="email" class="form-control" id="newsletter-email" placeholder="Your email address" required aria-label="Email for newsletter subscription">
+                    <button type="submit" class="btn btn-light">Subscribe Now <i class="fas fa-paper-plane ms-2"></i></button>
+                    <div id="newsletter-message" class="alert alert-info mt-3 d-none w-75" role="alert"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-heading">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-5 shadow-lg rounded-4">
+                        <div id="contact-message" class="alert alert-success d-none" role="alert">
+                            Your message has been sent successfully! We will get back to you shortly.
+                        </div>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 text-center">
+                <div class="col-md-4">
+                    <h5 class="text-primary"><i class="fas fa-map-marker-alt me-2"></i> Address</h5>
+                    <p>123 DevLinx Lane, Tech City, TL 98765</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-primary"><i class="fas fa-phone-alt me-2"></i> Phone</h5>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-primary"><i class="fas fa-envelope me-2"></i> Email</h5>
+                    <p><a href="mailto:info@devlinx.com" class="text-decoration-none text-dark">info@devlinx.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 DevLinx. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Case Study Modal -->
+    <div class="modal fade" id="caseStudyModal" tabindex="-1" aria-labelledby="caseStudyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="caseStudyModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="caseStudyImage" src="" class="img-fluid rounded mb-3" alt="Case Study Image">
+                    <h6>The Problem:</h6>
+                    <p id="caseStudyProblem"></p>
+                    <h6>Our Solution:</h6>
+                    <p id="caseStudySolution"></p>
+                    <h6>Technologies Used:</h6>
+                    <p id="caseStudyTechnologies"></p>
+                    <h6>Results:</h6>
+                    <p id="caseStudyResults"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Member Profile Modal -->
+    <div class="modal fade" id="teamMemberModal" tabindex="-1" aria-labelledby="teamMemberModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teamMemberModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="memberProfileImage" src="" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--primary-color);" alt="Team Member Profile">
+                    <h5 id="memberProfileRole" class="text-muted"></h5>
+                    <p id="memberProfileBio"></p>
+                    <div class="social-icons">
+                        <a id="memberProfileLinkedin" href="#" target="_blank" class="text-primary mx-2 d-none"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a id="memberProfileTwitter" href="#" target="_blank" class="text-primary mx-2 d-none"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a id="memberProfileGithub" href="#" target="_blank" class="text-primary mx-2 d-none"><i class="fab fa-github fa-lg"></i></a>
+                        <a id="memberProfileBehance" href="#" target="_blank" class="text-primary mx-2 d-none"><i class="fab fa-behance fa-lg"></i></a>
+                        <a id="memberProfileTrello" href="#" target="_blank" class="text-primary mx-2 d-none"><i class="fab fa-trello fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Chat Mock-up -->
+    <div id="live-chat-bubble" class="live-chat-bubble">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div id="chat-mockup-window" class="chat-mockup-window d-none">
+        <div class="chat-header">
+            Live Chat
+            <button id="close-chat-mockup" class="close-chat-mockup">&times;</button>
+        </div>
+        <div class="chat-body">
+            <p>Hello! How can we help you today?</p>
+            <input type="text" placeholder="Type your message..." class="chat-input">
+            <button class="send-chat-btn">Send</button>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS Bundle (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

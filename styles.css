@@ -1,0 +1,725 @@
+/* CSS Variables for theming */
+:root {
+    --body-bg: #f8f9fa;
+    --body-color: #343a40;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-link-color: #495057;
+    --navbar-link-hover-color: #007bff;
+    --heading-color: #212529;
+    --card-bg: #fff;
+    --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --secondary-text-color: #6c757d;
+    --input-border-color: #ced4da;
+    --testimonial-slider-bg: #e9ecef;
+    --testimonial-item-bg: #fff;
+    --testimonial-item-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --testimonial-item-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    --testimonial-quote-color: #555;
+    --testimonial-author-color: #333;
+    --footer-bg: #343a40;
+    --footer-color: #f8f9fa;
+    --primary-color: #007bff; /* Main accent color */
+    --primary-hover-color: #0056b3;
+    --section-bg-light: #f8f9fa;
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --body-bg: #212529; /* Dark charcoal */
+    --body-color: #e0e0e0; /* Light gray */
+    --navbar-bg: rgba(33, 37, 41, 0.95); /* Darker navbar */
+    --navbar-link-color: #dee2e6; /* Lighter links */
+    --navbar-link-hover-color: #6aa8ff; /* Adjusted primary for dark */
+    --heading-color: #f8f9fa; /* White headings */
+    --card-bg: #343a40; /* Slightly lighter dark for cards */
+    --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    --card-hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    --secondary-text-color: #adb5bd; /* Lighter secondary text */
+    --input-border-color: #495057;
+    --testimonial-slider-bg: #2c3e50; /* Dark blue-gray */
+    --testimonial-item-bg: #34495e; /* Even darker blue-gray for items */
+    --testimonial-item-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    --testimonial-item-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    --testimonial-quote-color: #ced4da;
+    --testimonial-author-color: #f8f9fa;
+    --footer-bg: #1a1e21; /* Even darker footer */
+    --footer-color: #f8f9fa;
+    --primary-color: #6aa8ff; /* Adjusted primary for dark */
+    --primary-hover-color: #007bff;
+    --section-bg-light: #2c3e50; /* Darker bg for light sections */
+}
+
+/* General styles using variables */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.8rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--navbar-link-color) !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--navbar-link-hover-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Video Background Styles */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.z-index-1 {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section {
+    color: #fff;
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    animation: slideInUp 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    animation: slideInUp 1.2s ease-out;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.section-bg-light {
+    background-color: var(--section-bg-light);
+    transition: background-color 0.3s ease;
+}
+
+.section-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--heading-color);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    color: var(--body-color); /* Ensure card text adapts */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.team-member-card .card-img-top {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border: 5px solid var(--primary-color); /* Uses primary color */
+    transition: border-color 0.3s ease;
+}
+
+.team-member-card .card-body {
+    text-align: center;
+}
+
+.team-member-card .card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color); /* Ensure title adapts */
+    transition: color 0.3s ease;
+}
+
+.team-member-card .card-text {
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
+}
+
+.sbu-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sbu-card:hover .sbu-icon {
+    transform: translateY(-5px);
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--card-bg); /* Use card bg for input to match */
+    color: var(--body-color); /* Input text color */
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Testimonials Slider */
+.testimonial-slider-container {
+    overflow: hidden;
+    position: relative;
+    padding: 3rem 0;
+    background-color: var(--testimonial-slider-bg);
+    border-radius: 20px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-slider {
+    display: flex;
+    animation: slide-testimonials 30s linear infinite; /* Adjust duration as needed */
+    padding: 20px 0;
+    align-items: center;
+}
+
+.testimonial-item {
+    flex: 0 0 auto;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 15px;
+    background-color: var(--testimonial-item-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--testimonial-item-shadow);
+    text-align: center;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: scale(1);
+    box-shadow: var(--testimonial-item-hover-shadow);
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid transparent; /* Initial transparent border */
+    transition: filter 0.3s ease, border-color 0.3s ease;
+    filter: grayscale(100%); /* Start with grayscale */
+}
+
+.testimonial-item:hover .testimonial-avatar {
+    filter: grayscale(0%); /* Remove grayscale on hover */
+    border-color: var(--primary-color); /* Add color border on hover */
+}
+
+.testimonial-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--testimonial-quote-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--testimonial-author-color);
+    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.testimonial-company {
+    color: var(--secondary-text-color);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* Pause animation on hover */
+.testimonial-slider-container:hover .testimonial-slider {
+    animation-play-state: paused;
+}
+
+@keyframes slide-testimonials {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Half the total width to loop */
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    padding: 3rem 0;
+    text-align: center;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a {
+    color: var(--footer-color);
+    font-size: 1.5rem;
+    margin: 0 0.8rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Theme toggle button specific styles */
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--navbar-link-color);
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--navbar-link-hover-color);
+}
+
+/* New Sections Specific Styles */
+.partnerships-slider-container {
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03); /* Subtle inner shadow */
+    border-radius: 15px;
+    background-color: var(--testimonial-slider-bg); /* Reuse testimonial background for consistency */
+    transition: background-color 0.3s ease;
+}
+
+.partnerships-slider {
+    display: flex;
+    white-space: nowrap; /* Keep items on a single line */
+    animation: slide-partnerships 40s linear infinite; /* Adjust duration for speed */
+    align-items: center;
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 0 15px; /* Add some padding to the sides */
+}
+
+.partnerships-slider-container:hover .partnerships-slider {
+    animation-play-state: paused;
+}
+
+.partnerships-section .partner-logo {
+    max-width: 120px; /* Slightly smaller logos for better flow */
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    margin: 0 25px; /* Space between logos */
+    display: inline-block; /* Essential for white-space: nowrap */
+}
+
+.partnerships-section .partner-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+@keyframes slide-partnerships {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } /* Translate half the width of duplicated content */
+}
+
+/* Newsletter Signup Section */
+.newsletter-signup {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-signup h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.newsletter-signup p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.newsletter-signup .form-control {
+    max-width: 400px;
+    margin: 0 auto 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--body-color);
+}
+.newsletter-signup .form-control::placeholder {
+    color: #6c757d;
+}
+
+.newsletter-signup .btn-light {
+    background-color: #fff;
+    color: var(--primary-color);
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.newsletter-signup .btn-light:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Live Chat Button */
+.live-chat-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1050; /* Above modals */
+}
+
+.live-chat-bubble:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Chat Mockup Window */
+.chat-mockup-window {
+    position: fixed;
+    bottom: 100px; /* Above the bubble */
+    right: 30px;
+    width: 350px;
+    height: 400px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    z-index: 1060; /* Even higher */
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.close-chat-mockup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--body-color);
+}
+
+.chat-body p {
+    margin-bottom: 15px;
+    background-color: var(--testimonial-slider-bg); /* Use a subtle background for messages */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.chat-input {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--input-border-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: border-color 0.3s ease;
+}
+
+.chat-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.send-chat-btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+}
+
+.send-chat-btn:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+    transform: translateY(-1px);
+}
+
+
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.modal-header {
+    border-bottom-color: var(--input-border-color);
+}
+.modal-footer {
+    border-top-color: var(--input-border-color);
+}
+.btn-close {
+    filter: invert(var(--bs-btn-close-color-dark)); /* Adjust close button for dark theme */
+}
+body.dark-theme .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Makes it white */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    .section-heading {
+        font-size: 2.2rem;
+    }
+    .testimonial-item {
+        width: 350px;
+    }
+    .navbar-nav {
+        align-items: center; /* Center nav items in mobile */
+    }
+    #theme-toggle {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+    .partnerships-slider .partner-logo {
+        margin: 0 15px; /* Adjust spacing for smaller screens */
+    }
+    .newsletter-signup {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 7rem 0;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .section-padding {
+        padding: 3rem 0;
+    }
+    .section-heading {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+    .testimonial-item {
+        width: 300px; /* Further reduce width for smaller screens */
+        margin: 0 10px;
+    }
+    .testimonial-slider {
+        animation-duration: 20s; /* Faster scroll for smaller screens */
+    }
+    .partnerships-slider .partner-logo {
+        max-width: 100px; /* Smaller logos for very small screens */
+        margin: 0 10px;
+    }
+    .chat-mockup-window {
+        bottom: 20px;
+        right: 20px;
+        width: calc(100% - 40px); /* Full width minus margin */
+        height: 60%; /* Occupy 60% of viewport height */
+    }
+    .live-chat-bubble {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .card-img-top {
+        height: 200px;
+    }
+    .testimonial-item {
+        width: 280px; /* Smallest screen width */
+        padding: 1.5rem;
+    }
+}
