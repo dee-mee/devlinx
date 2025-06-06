@@ -48,6 +48,103 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }, 5000);
 });
 
+// Page Load Animation
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('page-transition');
+    
+    // Initialize lazy loading
+    const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+    
+    if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove('lazy');
+                    lazyImage.classList.add('loaded');
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    }
+    
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        // Show/hide back to top button
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+        
+        // Update breadcrumb
+        updateBreadcrumb();
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Adjust for fixed header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Back to top functionality
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Function to update breadcrumb based on current section
+    function updateBreadcrumb() {
+        const sections = document.querySelectorAll('section[id]');
+        let currentSection = '';
+        let currentSectionName = 'Home';
+        
+        // Find which section is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                currentSection = section.id;
+                currentSectionName = section.querySelector('h2') ? section.querySelector('h2').textContent : currentSectionName;
+            }
+        });
+        
+        // Update breadcrumb
+        const breadcrumb = document.getElementById('currentBreadcrumb');
+        if (breadcrumb) {
+            if (currentSection === 'home') {
+                breadcrumb.textContent = 'Home';
+            } else {
+                breadcrumb.innerHTML = `<a href="#${currentSection}">${currentSectionName}</a>`;
+            }
+        }
+    }
+    
+    // Initial breadcrumb update
+    updateBreadcrumb();
+});
+
 // Newsletter Signup Submission
 document.getElementById('newsletterForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
