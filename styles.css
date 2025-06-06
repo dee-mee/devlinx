@@ -48,6 +48,15 @@ body.dark-theme {
     --primary-color: #6aa8ff; /* Adjusted primary for dark */
     --primary-hover-color: #007bff;
     --section-bg-light: #2c3e50; /* Darker bg for light sections */
+    
+    /* Process Section Dark Mode */
+    .process-section .section-heading {
+        color: #000000; /* Black text in dark mode */
+    }
+    
+    .process-section .section-heading::after {
+        background-color: #6aa8ff; /* Light blue line in dark mode */
+    }
 }
 
 /* General styles using variables */
@@ -487,6 +496,161 @@ footer .social-icons a:hover {
     padding: 0 0.5rem;
 }
 
+/* Process Section */
+.process-section {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+}
+
+.process-section .section-heading {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.process-steps {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+    align-items: flex-start;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.step-content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    flex-grow: 1;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.step-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.step-content h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.step-content p {
+    margin-bottom: 0;
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+}
+
+/* Add connecting lines between steps */
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25px;
+    height: 100%;
+    width: 2px;
+    background: var(--primary-color);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Metrics Section */
+.metrics-section {
+    padding: 5rem 0;
+    background-color: var(--body-bg);
+}
+
+.metric-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.metric-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.metric-icon i {
+    font-size: 1.5rem;
+}
+
+.progress {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-step {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .step-number {
+        margin-bottom: 1rem;
+    }
+    
+    .process-steps::before {
+        left: 25px;
+    }
+    
+    .step-content {
+        width: 100%;
+    }
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
@@ -601,120 +765,6 @@ html {
     .newsletter-signup h3 {
         font-size: 2.5rem;
     }
-}
-
-/* Live Chat Button */
-.live-chat-bubble {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--primary-color);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1050; /* Above modals */
-}
-
-.live-chat-bubble:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
-}
-
-/* Chat Mockup Window */
-.chat-mockup-window {
-    position: fixed;
-    bottom: 100px; /* Above the bubble */
-    right: 30px;
-    width: 350px;
-    height: 400px;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: var(--card-shadow);
-    display: flex;
-    flex-direction: column;
-    z-index: 1060; /* Even higher */
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.chat-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.close-chat-mockup {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.chat-body {
-    flex-grow: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: var(--body-color);
-}
-
-.chat-body p {
-    margin-bottom: 15px;
-    background-color: var(--testimonial-slider-bg); /* Use a subtle background for messages */
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.chat-input {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--input-border-color);
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: var(--body-bg);
-    color: var(--body-color);
-    transition: border-color 0.3s ease;
-}
-
-.chat-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: none;
-}
-
-.send-chat-btn {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    width: 100%;
-    cursor: pointer;
-}
-
-.send-chat-btn:hover {
-    background-color: var(--primary-hover-color);
-    border-color: var(--primary-hover-color);
-    transform: translateY(-1px);
 }
 
 

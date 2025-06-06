@@ -48,6 +48,84 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     }, 5000);
 });
 
+// Animate Counter
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+    
+    const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+            element.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target;
+        }
+    };
+    
+    updateCounter();
+}
+
+// Animate Progress Bar
+function animateProgressBar(bar, targetWidth, duration = 1500) {
+    let start = null;
+    const startWidth = 0;
+    
+    const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+        
+        const width = startWidth + (targetWidth - startWidth) * percentage;
+        bar.style.width = `${width}%`;
+        bar.setAttribute('aria-valuenow', Math.round(width));
+        
+        if (progress < duration) {
+            requestAnimationFrame(step);
+        }
+    };
+    
+    requestAnimationFrame(step);
+}
+
+// Check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Initialize animations when in viewport
+function initAnimations() {
+    // Animate statistics
+    document.querySelectorAll('.stat-number').forEach(stat => {
+        if (isInViewport(stat) && !stat.classList.contains('animated')) {
+            const target = parseInt(stat.getAttribute('data-count'));
+            animateCounter(stat, target);
+            stat.classList.add('animated');
+        }
+    });
+    
+    // Animate progress bars in metrics section
+    const metricBars = [
+        { bar: document.getElementById('pageSpeedBar'), target: 92 },
+        { bar: document.getElementById('mobileBar'), target: 95 },
+        { bar: document.getElementById('seoBar'), target: 88 }
+    ];
+    
+    metricBars.forEach(({ bar, target }) => {
+        if (bar && isInViewport(bar) && !bar.classList.contains('animated')) {
+            animateProgressBar(bar, target);
+            bar.classList.add('animated');
+        }
+    });
+}
+
 // Page Load Animation
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('page-transition');
@@ -143,6 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initial breadcrumb update
     updateBreadcrumb();
+    
+    // Set performance metrics (simulated values)
+    document.getElementById('pageSpeedScore').textContent = '92';
+    document.getElementById('mobileScore').textContent = '95';
+    document.getElementById('seoScore').textContent = '88';
+    
+    // Initialize animations on load
+    initAnimations();
+    
+    // Re-check animations on scroll
+    window.addEventListener('scroll', initAnimations);
 });
 
 // Newsletter Signup Submission
@@ -357,20 +446,5 @@ if (teamMemberModal) {
                 modalTrello.href = trello;
             }
         }
-    });
-}
-
-// Live Chat Mockup Toggle
-const chatBubble = document.getElementById('live-chat-bubble');
-const chatWindow = document.getElementById('chat-mockup-window');
-const closeChatBtn = document.getElementById('close-chat-mockup');
-
-if (chatBubble && chatWindow && closeChatBtn) {
-    chatBubble.addEventListener('click', () => {
-        chatWindow.classList.toggle('d-none');
-    });
-
-    closeChatBtn.addEventListener('click', () => {
-        chatWindow.classList.add('d-none');
     });
 }
